@@ -3,21 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
   "scripts": {
-    "prebuild": "rm -rf site && mkdir -p site && cp web/*.css site",
+    "prebuild": "rm -rf site && mkdir -p site/$npm_package_version && cp web/*.css site/$npm_package_version",
     "scripts": "webpack",
     "site": "node web/template.js web/index.html site/index.html",
     "build": "npm run scripts && npm run site"
   },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^4.13.1",
     "eslint-config-crockford": "^2.0.0",
     "eslint-config-defaults": "^9.0.0",
     "handlebars": "^4.0.11",
+    "query-string": "^5.0.1",
     "webpack": "^3.10.0"
   }
 }

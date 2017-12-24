@@ -1,23 +1,52 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="{{version}}/style.css" />
 		<title>User Story Estimation as a Service</title>
 	</head>
 <body class="nojs">
+	<h1>User Story Estimation as a Service</h1>
+	
 	<div id="main">
-		<form method="post" action="#" id="story-form">
-			<label>As a <input type="text" name="user" required="required">,</label>
-			<label>In order to <input type="text" name="objective" required="required"></label>
-			<label>I want <input type="text" name="task" required="required"></label>
-			<input type="submit" value="Estimate">
+		<p>
+		This incredibly precise online estimation service tells you exactly when a user story will be finished
+		based on the only three criteria that matter &ndash; just fill in the template and let us solve the eternal problem 
+		of software estimation for you.
+		</p>
+
+		<form method="get" action="index.html" id="story-form">
+			<label>As a <input  tabindex="1" placeholder="role" type="text" name="user" required="required">,</label>
+			<label>In order to <input  tabindex="2" placeholder="achieve some objective" type="text" name="objective" required="required"></label>
+			<label>I want <input  tabindex="3" placeholder="some feature" type="text" name="task" required="required"></label>
+
+			<div id="actions">
+				<input  tabindex="4" type="submit" value="Estimate">
+			</div>
+			<div style="display:none;" class="loader" id="spinner">
+				Calculating...
+			</div>
+			<div style="display:none;" id="result">
+				<p>Your story will be done <span id="result-text"></span>.</p>
+				<button tabindex="5" id="new-estimate">Estimate another story</button>
+				<button tabindex="6" id="book-links" class="ghost">Not Good Enough?</button>
+			</div>
 		</form>
-		<div style="display:none;" class="loader" id="spinner">
-			Calculating...
-		</div>
-		<div style="display:none;" id="result">
-			Your story will be done <span id="result-text"></span>.
-		</div>
+	</div>
+	<div id="books" style="display: none">
+		<p>
+		To actually learn more about how to work effectively with user stories, here
+		are some nice books you could read:
+		</p>
+		<p>
+		<a href="http://amzn.to/2BK327t">Fifty Quick Ideas to Improve Your User Stories</a> &ndash; lots of practical tips on
+		working with stories.
+		</p>
+		<p>
+			<a href="http://amzn.to/2BKP7xN">User Story Mapping</a> &ndash; a modern take on organising stories and release planning
+		</p>
+		<p>
+		<a href="http://amzn.to/2BZRQR2">User Stories Applied</a> &ndash; the bible for user stories, great for beginners.
+	  </p>
 	</div>
 	<div id="jsmessage">
 		This web site requires ES6 JavaScript, and your browser either disabled loading JS files, or is not compatible with

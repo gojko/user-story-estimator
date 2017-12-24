@@ -1,3 +1,7 @@
+body {
+  max-width: 800px;
+  margin: auto;
+}
 body.nojs #main {
   display: none;
 }
@@ -5,20 +9,46 @@ body:not(.nojs) #jsmessage {
   display: none;
 }
 
-body, input {
+#jsmessage {
+  border: 2px solid #cb296a;
+}
+
+body, input, button {
   font-size: 30px;
   line-height: 1.5;  
   color: #00b2e4;
 }
-input[type=submit] {
+h1 {
+  font-size: 50px;
+  color: #29a8cb;
+}
+input[type=submit], button {
   color: white;
   background-color: #00b2e4; 
   margin-top: 30px;
+  border-radius: 10px;
+  border: #00b2e4;
+  padding: 10px;
+  border: 1px solid #00b2e4; 
+  cursor: pointer;
+}
+input[type=submit]:focus, input[type=submit]:hover, button:hover, button:focus {
+  background-color: #29a8cb;
+  border-color: #29a8cb;
+  outline: none;
+}
+button.ghost {
+  background-color: white;
+  color: #00b2e4;
+}
+button.ghost:hover, button.ghost:focus {
+  background-color: white;
+  color: #29a8cb;
+  border-color: #29a8cb;
 }
 input[type=text] {
   border: none;
-  border-bottom: 1px solid #22AAE0;
-  color: #22AAE0;
+  border-bottom: 1px solid #00b2e4;
   color: #00b2e4;
   padding: 2px 7px;
   white-space: nowrap;
@@ -31,13 +61,14 @@ input[type=text] {
   transition: color .25s,border .25s;
 }
 input[type=text]:focus {
-  border-bottom: 2px solid #22AAE0;
+  border-bottom: 2px solid #29a8cb;
 }
-input[type=submit]:focus, input[type=submit]:hover {
-  background-color: #29a8cb;
-  outline: none;
 
+
+input::placeholder {
+  color: #cbab29;
 }
+
 
 #story-form, #result {
   display: block;
@@ -49,7 +80,21 @@ input[type=submit]:focus, input[type=submit]:hover {
   display: block;
 }
 
-  
+#result p {
+  color: #29cb4c;
+}
+
+#books {
+  color: #232323;
+}
+#books a, #books a:visited {
+  color: #232323;
+  font-weight: bold;
+}
+#books a:hover {
+  color: black;
+}
+ 
 .loader,
 .loader:before,
 .loader:after {
