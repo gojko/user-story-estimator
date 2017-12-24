@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css" />
+		<title>User Story Estimation as a Service</title>
+	</head>
+<body class="nojs">
+	<div id="main">
+		<form method="post" action="#" id="story-form">
+			<label>As a <input type="text" name="user" required="required">,</label>
+			<label>In order to <input type="text" name="objective" required="required"></label>
+			<label>I want <input type="text" name="task" required="required"></label>
+			<input type="submit" value="Estimate">
+		</form>
+		<div style="display:none;" class="loader" id="spinner">
+			Calculating...
+		</div>
+		<div style="display:none;" id="result">
+			Your story will be done <span id="result-text"></span>.
+		</div>
+	</div>
+	<div id="jsmessage">
+		This web site requires ES6 JavaScript, and your browser either disabled loading JS files, or is not compatible with
+		ES6. Please load the site in a more recent version of Chrome, Firefox or Safari to use the application.
+	</div>	
+	<script src="{{version}}/main.js"></script>
+</body>
+</html>
