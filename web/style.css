@@ -94,7 +94,17 @@ input::placeholder {
 #books a:hover {
   color: black;
 }
- 
+#colophon {
+  padding-top: 12px;
+  text-align:center;
+  border-top: 1px solid #29a8cb;
+  color: #29a8cb;
+  font-size: 12px;
+}
+#colophon a, #colophon a:visited, #colophon a:hover {
+  color: #29a8cb;
+}
+
 .loader,
 .loader:before,
 .loader:after {
