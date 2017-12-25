@@ -22,29 +22,42 @@ h1 {
   font-size: 50px;
   color: #29a8cb;
 }
-input[type=submit], button {
+.spaced {
+  margin-top: 30px;
+}
+input[type=submit], button, a.button, a.button:visited, a.button:active {
   color: white;
   background-color: #00b2e4; 
-  margin-top: 30px;
   border-radius: 10px;
-  border: #00b2e4;
-  padding: 10px;
+  padding: 10px 10px 10px 10px;
+  margin: 0;
   border: 1px solid #00b2e4; 
   cursor: pointer;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 30px;
 }
-input[type=submit]:focus, input[type=submit]:hover, button:hover, button:focus {
+input[type=submit]:focus, input[type=submit]:hover, button:hover, button:focus, a.button:hover, a.button:focus {
   background-color: #29a8cb;
   border-color: #29a8cb;
   outline: none;
 }
-button.ghost {
+button.ghost, a.button.ghost {
   background-color: white;
   color: #00b2e4;
 }
-button.ghost:hover, button.ghost:focus {
+button.ghost:hover, button.ghost:focus, a.button.ghost:hover, a.button.focus {
   background-color: white;
   color: #29a8cb;
   border-color: #29a8cb;
+}
+button.primary, a.button.primary {
+  background-color: #29cb4c;
+  border-color: #29cb4c;
+}
+button.primary:hover, a.button.primary:focus {
+  background-color: #48b25f;
+  border-color: #48b25f;
 }
 input[type=text] {
   border: none;

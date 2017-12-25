@@ -2,7 +2,30 @@
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="{{version}}/style.css" />
-		<title>User Story Estimation as a Service</title>
+
+		<title>{{ title }}</title>
+		<link rel="canonical" href="{{url}}">
+		<meta name="author" content="{{author}}">
+		<meta name="description" content="{{ description }}">
+
+		<meta itemprop="name" content="{{ title }}">
+		<meta itemprop="description" content="{{ description }}">
+		<meta itemprop="image" content="{{url}}/{{version}}/{{seo_image}}" />
+
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="@{{twitter_username}}">
+		<meta name="twitter:title" content="{{ title }}">
+		<meta name="twitter:description" content="{{ description }}">
+		<meta name="twitter:creator" content="@{{twitter_username}}">
+		<meta name="twitter:image:src" content="{{url}}/{{version}}/{{seo_image}}"/>
+
+		<meta property="og:title"  content="{{ title }}" />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="{{url}}" />
+		<meta property="og:image" content="{{url}}/{{version}}/{{seo_image}}"/>
+		<meta property="og:description" content="{{description}}"/>
+		<meta property="og:site_name" content="{{title}}" />
+
 	</head>
 <body class="nojs">
 	<h1>User Story Estimation as a Service</h1>
@@ -15,11 +38,11 @@
 		</p>
 
 		<form method="get" action="index.html" id="story-form">
-			<label>As a <input  tabindex="1" placeholder="role" type="text" name="user" required="required">,</label>
+			<label>As a <input  tabindex="1" placeholder="role" type="text" name="user" required="required"></label>
 			<label>In order to <input  tabindex="2" placeholder="achieve some objective" type="text" name="objective" required="required"></label>
 			<label>I want <input  tabindex="3" placeholder="some feature" type="text" name="task" required="required"></label>
 
-			<div id="actions">
+			<div id="actions" class="spaced">
 				<input  tabindex="4" type="submit" value="Estimate">
 			</div>
 			<div style="display:none;" class="loader" id="spinner">
@@ -27,15 +50,18 @@
 			</div>
 			<div style="display:none;" id="result">
 				<p>Your story will be done <span id="result-text"></span>.</p>
-				<button tabindex="5" id="new-estimate">Estimate another story</button>
-				<button tabindex="6" id="book-links" class="ghost">Not Good Enough?</button>
+				<div class="spaced">
+					<a tabindex="5" id="send" href="#" class="button primary">Send</a>
+					<a tabindex="6" id="new-estimate" class="button">Estimate another story</a>
+					<a tabindex="7" id="book-links" class="button ghost">Not Good Enough?</a>
+				</div>
 			</div>
 		</form>
 	</div>
 	<div id="books" style="display: none">
 		<p>
-		To actually learn more about how to work effectively with user stories, here
-		are some nice books you could read:
+		Instead of following a silly template, here
+		are some nice books that will help you work with user stories more effectively:
 		</p>
 		<p>
 		<a href="http://amzn.to/2BK327t">Fifty Quick Ideas to Improve Your User Stories</a> &ndash; lots of practical tips on
@@ -54,6 +80,7 @@
 	</div>	
 	<div id="colophon">
 		By <a href="https://gojko.net">Gojko Adzic</a>. Integrate the estimator into your projects, or contribute using <a href="https://github.com/gojko/user-story-estimator">GitHub</a>. 
+		Photo by <a href="https://unsplash.com/photos/eIkbSc3SDtI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sonja Langford</a> on Unsplash.
 	</div>
 	<script src="{{version}}/main.js"></script>
 </body>

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prebuild": "rm -rf site && mkdir -p site/$npm_package_version && cp web/*.css site/$npm_package_version",
+    "prebuild": "rm -rf site && mkdir -p site/$npm_package_version && cp web/*.css web/*.png site/$npm_package_version",
     "scripts": "webpack",
     "site": "node web/template.js web/index.html site/index.html",
     "build": "npm run scripts && npm run site"

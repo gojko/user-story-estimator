@@ -8,7 +8,13 @@ const input = process.argv[2],
 		const source = fs.readFileSync(input, 'utf8'),
 			template = handlebars.compile(source),
 			result = template({
-				version: process.env.npm_package_version
+				version: process.env.npm_package_version,
+				url: 'https://userstoryestimation.net',
+				author: 'Gojko Adzic',
+				description: 'User Story Estimation as a Service. Free. Opensource. The most accurate User Story estimator online.',
+				title: 'User Story Estimation as a Service',
+				seo_image: 'header-750.png',
+				twitter_username: 'gojkoadzic'
 			});
 		fs.writeFileSync(output, result, 'utf8');
 	};

@@ -13,6 +13,7 @@ const queryString = require('query-string'),
 			spinnerDiv = document.getElementById('spinner'),
 			actionsDiv = document.getElementById('actions'),
 			resultSpan = document.getElementById('result-text'),
+			sendLink = document.getElementById('send'),
 			inputFields = Array.from(form.querySelectorAll('input[type=text]')),
 			showSpinner = function () {
 				resultDiv.style.display = 'none';
@@ -20,11 +21,27 @@ const queryString = require('query-string'),
 				actionsDiv.style.display = 'none';
 			},
 			showResult = function () {
-				const text = inputFields.map(t => t.value).join(' ');
-				resultSpan.innerHTML = estimate(text);
+				const text = inputFields.map(t => t.value).join(' '),
+					outcome = estimate(text),
+					emailBody = `Hi,
+
+We now have a realistic estimate for this story:
+
+As a ${queryData.user},
+In order to ${queryData.objective}
+I want ${queryData.task}
+
+The story will be done ${outcome}.
+
+---
+Estimate provided by https://userstoryestimation.net`;
+				resultSpan.innerHTML = outcome;
 				spinnerDiv.style.display = 'none';
 				resultDiv.style.display = 'block';
 				actionsDiv.style.display = 'none';
+				sendLink.setAttribute('href', 'mailto:?subject='
+					+ encodeURIComponent('user story estimate')
+					+ '&body=' + encodeURIComponent(emailBody));
 				newEstimateButton.focus();
 			},
 			initFields = function () {
