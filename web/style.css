@@ -8,7 +8,6 @@ body.nojs #main {
 body:not(.nojs) #jsmessage {
   display: none;
 }
-
 #jsmessage {
   border: 2px solid #cb296a;
 }
@@ -24,6 +23,7 @@ h1 {
 }
 .spaced {
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 input[type=submit], button, a.button, a.button:visited, a.button:active {
   color: white;
@@ -61,7 +61,7 @@ button.primary:hover, a.button.primary:focus {
 }
 input[type=text] {
   border: none;
-  border-bottom: 1px solid #00b2e4;
+  border-bottom: 1px dashed #00b2e4;
   color: #00b2e4;
   padding: 2px 7px;
   white-space: nowrap;
@@ -74,9 +74,9 @@ input[type=text] {
   transition: color .25s,border .25s;
 }
 input[type=text]:focus {
-  border-bottom: 2px solid #29a8cb;
+  border-bottom: 1px solid #29a8cb;
+  outline: none;
 }
-
 
 input::placeholder {
   color: #cbab29;

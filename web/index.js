@@ -8,6 +8,7 @@ const queryString = require('query-string'),
 			mainDiv = document.getElementById('main'),
 			bookLinksDiv = document.getElementById('books'),
 			newEstimateButton = document.getElementById('new-estimate'),
+			backButton = document.getElementById('back'),
 			bookLinksButton = document.getElementById('book-links'),
 			resultDiv = document.getElementById('result'),
 			spinnerDiv = document.getElementById('spinner'),
@@ -31,10 +32,9 @@ As a ${queryData.user},
 In order to ${queryData.objective}
 I want ${queryData.task}
 
-The story will be done ${outcome}.
+Check out the estimate here: ${window.location.href}
 
----
-Estimate provided by https://userstoryestimation.net`;
+`;
 				resultSpan.innerHTML = outcome;
 				spinnerDiv.style.display = 'none';
 				resultDiv.style.display = 'block';
@@ -44,23 +44,34 @@ Estimate provided by https://userstoryestimation.net`;
 					+ '&body=' + encodeURIComponent(emailBody));
 				newEstimateButton.focus();
 			},
+			showForm = function () {
+				actionsDiv.style.display = 'block';
+				spinnerDiv.style.display = 'none';
+				resultDiv.style.display = 'none';
+			},
+			activateForm = function (e) {
+				showForm();
+				inputFields[0].focus();
+				e.preventDefault();
+			},
 			initFields = function () {
 				inputFields.forEach(field => {
 					if (queryData[field.name]) {
 						field.value = queryData[field.name];
 					}
+					field.addEventListener('change', showForm);
 				});
 			},
 			formFilled = function () {
 				return !inputFields.find(t => !t.value);
 			};
-		newEstimateButton.addEventListener('click', e => {
-			actionsDiv.style.display = 'block';
-			spinnerDiv.style.display = 'none';
-			resultDiv.style.display = 'none';
-			inputFields[0].focus();
-			e.preventDefault();
+		newEstimateButton.addEventListener('click', activateForm);
+		backButton.addEventListener('click', e => {
+			bookLinksDiv.style.display = 'none';
+			mainDiv.style.display = 'block';
+			activateForm(e);
 		});
+
 		bookLinksButton.addEventListener('click', e => {
 			bookLinksDiv.style.display = 'block';
 			mainDiv.style.display = 'none';
@@ -74,6 +85,6 @@ Estimate provided by https://userstoryestimation.net`;
 		}
 	};
 
-window.addEventListener('load', init);
+document.addEventListener('DOMContentLoaded', init);
 
 
