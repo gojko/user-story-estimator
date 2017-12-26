@@ -5,6 +5,10 @@ body {
 body.nojs #main {
   display: none;
 }
+.page {
+  padding-left: 10px;
+  padding-right: 10px;
+}
 body:not(.nojs) #jsmessage {
   display: none;
 }
@@ -26,6 +30,7 @@ h1 {
   margin-bottom: 30px;
 }
 input[type=submit], button, a.button, a.button:visited, a.button:active {
+  display: inline-block;
   color: white;
   background-color: #00b2e4; 
   border-radius: 10px;
@@ -36,6 +41,7 @@ input[type=submit], button, a.button, a.button:visited, a.button:active {
   text-decoration: none;
   font-family: sans-serif;
   font-size: 30px;
+  margin-bottom: 0.5em;
 }
 input[type=submit]:focus, input[type=submit]:hover, button:hover, button:focus, a.button:hover, a.button:focus {
   background-color: #29a8cb;

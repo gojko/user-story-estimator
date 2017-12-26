@@ -29,44 +29,45 @@
 
 	</head>
 <body class="nojs">
-	<h1>User Story Estimation as a Service</h1>
+	<div class="page">
+		<h1>User Story Estimation as a Service</h1>
 	
-	<div id="main">
-		<p>
-		This incredibly precise online estimation service tells you exactly when a user story will be finished,
-		based on the only three details that matter. Fill in the template and let us solve the eternal problem 
-		of software estimation for you.
-		</p>
+		<div id="main">
+			<p>
+			This incredibly precise online estimation service tells you exactly when a user story will be finished,
+			based on the only three details that matter. Fill in the template and let us solve the eternal problem 
+			of software estimation for you.
+			</p>
 
-		<form method="get" action="index.html" id="story-form">
-			<label>As a <input  tabindex="1" placeholder="role" type="text" name="user" required="required"></label>
-			<label>In order to <input  tabindex="1" placeholder="achieve some objective" type="text" name="objective" required="required"></label>
-			<label>I want <input  tabindex="1" placeholder="some feature" type="text" name="task" required="required"></label>
+			<form method="get" action="index.html" id="story-form">
+				<label>As a <input  tabindex="1" placeholder="role" type="text" name="user" required="required"></label>
+				<label>In order to <input  tabindex="1" placeholder="achieve some objective" type="text" name="objective" required="required"></label>
+				<label>I want <input  tabindex="1" placeholder="some feature" type="text" name="task" required="required"></label>
 
-			<div id="actions" class="spaced">
-				<input  tabindex="1" type="submit" value="Estimate">
-			</div>
-			<div style="display:none;" class="loader" id="spinner">
-				Calculating...
-			</div>
-			<div style="display:none;" id="result">
-				<p>Your story will be done <span id="result-text"></span>.</p>
-				<div class="spaced">
-					<a tabindex="1" id="send" href="#" class="button primary">Send</a>
-					<a tabindex="1" id="new-estimate" class="button">Estimate another story</a>
-					<a tabindex="1" id="book-links" class="button ghost">Not Good Enough?</a>
+				<div id="actions" class="spaced">
+					<input  tabindex="1" type="submit" value="Estimate">
 				</div>
-			</div>
-		</form>
-	</div>
-	<div id="books" style="display: none">
-		<p>
-			Instead of following a silly template, here
-			are some nice books that will help you work with user stories more effectively:
-		</p>
-		<p>
-			<a href="http://amzn.to/2BK327t">Fifty Quick Ideas to Improve Your User Stories</a> &ndash; lots of practical tips on
-			working with stories.
+				<div style="display:none;" class="loader" id="spinner">
+					Calculating...
+				</div>
+				<div style="display:none;" id="result">
+					<p>Your story will be done <span id="result-text"></span>.</p>
+					<div class="spaced">
+						<a tabindex="1" id="send" href="#" class="button primary">Send</a>
+						<a tabindex="1" id="new-estimate" class="button">New Estimate</a>
+						<a tabindex="1" id="book-links" class="button ghost">Not Good Enough?</a>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div id="books" style="display: none">
+			<p>
+				Instead of following a silly template, here
+				are some nice books that will help you work with user stories more effectively:
+			</p>
+			<p>
+				<a href="http://amzn.to/2BK327t">Fifty Quick Ideas to Improve Your User Stories</a> &ndash; lots of practical tips on
+				working with stories.
 			</p>
 		<p>
 			<a href="http://amzn.to/2BKP7xN">User Story Mapping</a> &ndash; a modern take on organising stories and release planning
@@ -74,17 +75,18 @@
 		<p>
 			<a href="http://amzn.to/2BZRQR2">User Stories Applied</a> &ndash; the bible for user stories, great for beginners.
 		</p>
-	  <div class="spaced">
-	  <button tabindex="1" id="back" class="button">Estimate another story</button>
-	  </div>
-	</div>
-	<div id="jsmessage">
-		This web site requires ES6 JavaScript, and your browser either disabled loading JS files, or is not compatible with
-		ES6. Please load the site in a more recent version of Chrome, Firefox or Safari to use the application.
-	</div>	
-	<div id="colophon">
-		By <a href="https://gojko.net">Gojko Adzic</a>. Integrate the estimator into your projects, or contribute using <a href="https://github.com/gojko/user-story-estimator">GitHub</a>. 
-		Photo by <a href="https://unsplash.com/photos/eIkbSc3SDtI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sonja Langford</a> on Unsplash.
+		  <div class="spaced">
+		  <button tabindex="1" id="back" class="button">Estimate another story</button>
+		  </div>
+		</div>
+		<div id="jsmessage">
+			This web site requires ES6 JavaScript, and your browser either disabled loading JS files, or is not compatible with
+			ES6. Please load the site in a more recent version of Chrome, Firefox or Safari to use the application.
+		</div>	
+		<div id="colophon">
+			By <a href="https://gojko.net">Gojko Adzic</a>. Integrate the estimator into your projects, or contribute using <a href="https://github.com/gojko/user-story-estimator">GitHub</a>. 
+			Photo by <a href="https://unsplash.com/photos/eIkbSc3SDtI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sonja Langford</a> on Unsplash.
+		</div>
 	</div>
 	<script src="{{version}}/main.js"></script>
 </body>
