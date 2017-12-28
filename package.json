@@ -1,16 +1,20 @@
 {
   "name": "story-estimator",
   "version": "1.0.5",
-  "description": "",
-  "main": "index.js",
+  "description": "assigns a random completion estimate to a task description, mostly from phrases meaning 'never' in places around the world",
+  "main": "src/estimate.js",
+  "files": ["src", "LICENSE", "README.md"],
   "scripts": {
     "prebuild": "rm -rf site && mkdir -p site/$npm_package_version && cp web/*.css web/*.png site/$npm_package_version",
     "scripts": "webpack",
     "site": "node web/template.js web/index.html site/index.html",
     "build": "npm run scripts && npm run site"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["humor", "agile", "user stories", "estimates"],
+  "author": {
+    "name": "Gojko Adzic",
+    "url": "https://gojko.net"
+  },  
   "license": "MIT",
   "devDependencies": {
     "eslint": "^4.13.1",
