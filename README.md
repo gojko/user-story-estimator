@@ -23,5 +23,5 @@ $ node
 > estimate = require('story-estimator')
 [Function: estimate]
 > estimate('As a trader I want to trade because I want to trade')
-'on the 12th of Nevermber'
+'on the 12th of Nevember'
 ```
